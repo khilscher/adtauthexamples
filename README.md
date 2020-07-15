@@ -248,6 +248,7 @@ Now, let's grab some important information from the AAD app registration and fin
   - https://www.getpostman.com/oauth2/callback
 - Under **Authentication**, enable **Implicit grant** by enabling **Access tokens** (**ID tokens** should already be enabled).
 - Click **Save**.
+- Under **API permissions**, click **Add a permission**, select **Azure Service Management**, enable **user_impersonation** and click **Add permissions**
 
 Now you can run the **Interactive** code sample.
 
@@ -284,3 +285,4 @@ Now you can run the **Managed Identity** code sample.
 ## TODO
 
 - Translate app registration configuration and managed identity steps into CLI.
+- Determine a way to remove the Azure Service Management API permission in order to run the Interactive code sample. Currently, leaving this off breaks the code sample.
