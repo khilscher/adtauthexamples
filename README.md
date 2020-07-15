@@ -252,7 +252,7 @@ Now, let's grab some important information from the AAD app registration and fin
 
 Now you can run the **Interactive** code sample.
 
-To run the **Client Secret** code sample, create a client secret in the AAD app registration your created above. To create a client secret:
+To run the **Client Secret** code sample, create a client secret in the AAD app registration. To create a client secret:
 
 - Open the app registration in the **Azure Portal > Azure Active Directory > App registrations > your-app registration > Certificates and secrets**.
 - Click **New client secret**, create the new secret and copy the secret value to use in the code sample.
