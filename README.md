@@ -262,14 +262,14 @@ To run the **Managed Identity** code sample you will need to created a managed i
 
 - Publish the Azure Function to an Azure App Service
 - Create a managed identity for App Service by going to the **Azure Portal > App Services > your-app-service > Identity** and set the **Status** to **On**.
-- Give permissions for managed identity to an ADT role by:
+- Assign the managed identity an ADT role by:
   - **Azure Portal > Azure Digital Twins > your-ADT-instance > Access control (IAM) > Role assignments > Add > Add role assignment**
   - Under **Role** select the **Azure Digital Twins Owner (Preview)** role, under **Assign access to** choose **Function App** and select the managed identity of your function app.
   - Click **Save**.
 
 Verify your ADT instance's **Access control (IAM)** settings are correct. You should have your AAD user account, other AAD user accounts (optional), the AAD app, and the managed identity belonging to the Function App listed as members of the **Azure Digital Twins Owner (Preview)** role.
 
-![ADT IAM Settings](./media/adt_iam.jpg "ADT IAM Settings")
+![ADT IAM Settings](./media/adt_iam.JPG)
 
 Now you can run the **Managed Identity** code sample.
 
