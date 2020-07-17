@@ -282,6 +282,7 @@ Now you can run the **Managed Identity** code sample.
 - [What is Azure RBAC](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview)
 - [ADT RBAC Roles](https://docs.microsoft.com/en-us/azure/digital-twins/concepts-security#authorization-rbac-roles-for-azure-digital-twins)
 - [About Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview)
+- [Azure.Identity](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/identity/Azure.Identity)
 
 ## TODO
 
