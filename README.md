@@ -196,6 +196,12 @@ Set your subscription
 ```
 az account set --subscription "your-Azure-subscription-name"
 ```
+Get your directory (tenant) Id.
+```
+az account show
+```
+Copy the ```tenantId``` value and use this for the ```tenantId``` in the above code samples.
+
 Add the IoT extension to your CLI if you haven't already.
 ```
 az extension add --name azure-iot
@@ -230,7 +236,7 @@ Create an app registration in AAD. Your client app authenticates against the app
 ```
 az ad app create --display-name <your-app-registration-name> --native-app --required-resource-accesses manifest.json --reply-url http://localhost
 ```
-Copy the **appId** and use it to create a service principal for your AAD app.
+Copy the **appId** and use this as the ```clientId``` in the above code samples and to create a service principal for your AAD app.
 ```
 az ad sp create --id <appId>
 ```
@@ -238,11 +244,9 @@ This next step will give your AAD **appId** permissions to the ADT API.
 ```
 az dt role-assignment create --dt-name <your-ADT-instance-name> --assignee "<appId>" --role "Azure Digital Twins Owner (Preview)"
 ```
-Now, let's grab some important information from the AAD app registration and finish configuring the app registration.
+Now, let's finish configuring the app registration.
 
 - Open the app registration in the **Azure Portal > Azure Active Directory > App registrations > your-app-registration**.
-- Copy the **Application (client) ID** and use this as the ```clientId``` in the above code samples.
-- Copy the **Directory (tenant) ID** and use this as the ```tenantId``` in the above code samples.
 - Under **Authentication**, update the redirect URIs in your AAD app registration as needed to suit your application needs. If you are just using the above code samples, no additional redirect URIs need to be added. However, if using **Postman**, click **Add a platform**, select **Web** and added the following:
   - https://oauth.pstmn.io/v1/callback
   - https://www.getpostman.com/oauth2/callback
