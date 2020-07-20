@@ -252,14 +252,14 @@ Now, let's finish configuring the app registration in the **Azure Portal > Azure
     - https://oauth.pstmn.io/v1/callback
     - https://www.getpostman.com/oauth2/callback
     - http://localhost:3000
-- Under **Authentication**, enable **Implicit grant** by enabling **Access tokens** (**ID tokens** should already be enabled) and click **Save**.
+- Under **Authentication**, enable **Implicit grant** by enabling **Access tokens** (**ID tokens** should already be enabled) and click **Save**. Only required if you plan to use Digital Twins Explorer or Postman with Implicit grant type.
 - Under **API permissions**, click **Add a permission**, select **Azure Service Management**, enable **user_impersonation** and click **Add permissions**
 
 Now you can run the **Interactive** code sample.
 
 To run the **Client Secret** code sample, create a client secret in the AAD app registration. To create a client secret:
 
-- Open the app registration in the **Azure Portal > Azure Active Directory > App registrations > your-app registration > Certificates and secrets**.
+- Open the app registration in the **Azure Portal > Azure Active Directory > App registrations > your-app registration > Certificates & secrets**.
 - Click **New client secret**, create the new secret and copy the secret value to use in the code sample.
 
 Now you can run the **Client secret** code sample.
