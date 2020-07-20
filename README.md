@@ -214,7 +214,7 @@ Create your ADT instance. Ensure you use a region where the ADT service is avail
 ```
 az dt create --dt-name <your ADT instance name> -g <your-resource-group-name> -l westus2
 ```
-Copy the ```hostName``` value and use this for the ```adtInstanceUrl``` in the above code samples.
+Copy the ```hostName``` value, add the ```https://``` prefix and use this for the ```adtInstanceUrl``` in the above code samples.
 
 Add your AAD account (likely your email account) to an [ADT role](https://docs.microsoft.com/en-us/azure/digital-twins/concepts-security#authorization-rbac-roles-for-azure-digital-twins). This is required if you want to login interactively to ADT using Postman or using the **Interactive** sample above.
 ```
@@ -244,14 +244,15 @@ This next step will give your AAD **appId** permissions to the ADT API.
 ```
 az dt role-assignment create --dt-name <your-ADT-instance-name> --assignee "<appId>" --role "Azure Digital Twins Owner (Preview)"
 ```
-Now, let's finish configuring the app registration.
+Now, let's finish configuring the app registration in the **Azure Portal > Azure Active Directory > App registrations > your-app-registration**.
 
-- Open the app registration in the **Azure Portal > Azure Active Directory > App registrations > your-app-registration**.
-- Under **Authentication**, update the redirect URIs in your AAD app registration as needed to suit your application needs. If you are just using the above code samples, no additional redirect URIs need to be added. However, if using **Postman**, click **Add a platform**, select **Web** and added the following:
-  - https://oauth.pstmn.io/v1/callback
-  - https://www.getpostman.com/oauth2/callback
-- Under **Authentication**, enable **Implicit grant** by enabling **Access tokens** (**ID tokens** should already be enabled).
-- Click **Save**.
+- Under **Authentication**, update the redirect URIs in your AAD app registration as needed to suit your application needs. 
+  - If you are just using the above code samples, no additional redirect URIs need to be added. 
+  - If using **Postman** and/or [**Digital Twins Explorer**](https://github.com/Azure-Samples/digital-twins-explorer), click **Add a platform**, select **Web** and added the following **Redirect URIs**:
+    - https://oauth.pstmn.io/v1/callback
+    - https://www.getpostman.com/oauth2/callback
+    - http://localhost:3000
+- Under **Authentication**, enable **Implicit grant** by enabling **Access tokens** (**ID tokens** should already be enabled) and click **Save**.
 - Under **API permissions**, click **Add a permission**, select **Azure Service Management**, enable **user_impersonation** and click **Add permissions**
 
 Now you can run the **Interactive** code sample.
