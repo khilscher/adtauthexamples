@@ -11,7 +11,7 @@ You can also use ```DefaultAzureCredential``` which provides a default TokenCred
 - SharedTokenCacheCredential
 - InteractiveBrowserCredential
 
-However, I've found that ```DefaultAzureCredential``` can also slow down your auth code as it tries the various credential types. So if you know which credential type you are going to use, I'd recommend just using that specific credential type class as shown in the following examples.
+However, I've found that ```DefaultAzureCredential``` can also slow down your auth code as it tries the various credential types unless you override using ```DefaultAzureCredentialOptions``` class using, for example, ```ExcludeInteractiveBrowserCredential```. So if you know which credential type you are going to use, I'd recommend just using that specific credential type class as shown in the following examples.
 
 ## Interactive
 
