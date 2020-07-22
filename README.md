@@ -2,7 +2,13 @@
 
 This repo contains a Visual Studio solution with several C# examples for authenticating and querying the [**Microsoft Azure Digital Twins**](https://docs.microsoft.com/en-us/azure/digital-twins/overview) service using the [**Azure.Identity**](https://docs.microsoft.com/en-us/dotnet/api/azure.identity?view=azure-dotnet) and the [**Azure Digital Twins**](https://www.nuget.org/packages/Azure.DigitalTwins.Core/1.0.0-preview.3) SDKs.
 
-For interactive applications, use the **Interactive** example. For non-interactive applications, use either **Client Secret** or **Managed Identity** samples. Ensure ADT and AAD is setup appropriately for the authentication type you choose. See [**ADT and AAD Setup**](#ADT-and-AAD-Setup) below.
+Code samples:
+
+- [**Interactive**](#Interactive) - for interactive applications using ```InteractiveBrowserCredential```
+- [**Client Secret**](#Client-Secret) - for non-interactive applications using ```ClientSecretCredential```
+- [**Managed Identity**](#Managed-Identity) - for non-interactive applications using ```ManagedIdentityCredential```
+
+In order for these samples to run, ensure ADT and AAD are setup appropriately. See [**ADT and AAD Setup**](#ADT-and-AAD-Setup) below.
 
 You can also use ```DefaultAzureCredential``` which provides a default TokenCredential authentication flow for applications that will be deployed to Azure. The following credential types if enabled will be tried, in order:
 
@@ -11,7 +17,7 @@ You can also use ```DefaultAzureCredential``` which provides a default TokenCred
 - SharedTokenCacheCredential
 - InteractiveBrowserCredential
 
-However, I've found that ```DefaultAzureCredential``` can also slow down your auth code as it tries the various credential types unless you override using the ```DefaultAzureCredentialOptions``` class (for example, ```ExcludeInteractiveBrowserCredential```). So if you know which credential type you are going to use, I'd recommend just using that specific credential type class as shown in the following examples.
+However, I've found that ```DefaultAzureCredential``` can also slow down your auth code as it tries the various credential types unless you override using the ```DefaultAzureCredentialOptions``` class (for example, ```ExcludeInteractiveBrowserCredential```). So if you know which credential type you are going to use, I'd recommend just using that specific credential type class as shown in the following code samples.
 
 ## Interactive
 
@@ -123,6 +129,8 @@ namespace ClientSecret
 ```
 
 ## Managed Identity
+
+The following sample demonstrates querying ADT with an http-triggered Azure Function that utilizes ```ManagedIdentityCredential```.
 
 ```
 using System;
