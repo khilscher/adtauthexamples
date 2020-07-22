@@ -21,6 +21,8 @@ However, I've found that ```DefaultAzureCredential``` can also slow down your au
 
 ## Interactive
 
+The following sample demonstrates an interactive example that will login a user to ADT using their web browser and ```InteractiveBrowserCredential```.
+
 ```
 using System;
 using System.Threading.Tasks;
@@ -78,6 +80,8 @@ namespace Interactive
 
 ## Client Secret
 
+The following sample demonstrates a non-interactive example that will login an service/application to ADT using ```ClientSecretCredential```.
+
 ```
 using System;
 using System.Threading.Tasks;
@@ -130,7 +134,7 @@ namespace ClientSecret
 
 ## Managed Identity
 
-The following sample demonstrates querying ADT with an http-triggered Azure Function that utilizes ```ManagedIdentityCredential```.
+The following non-interactive sample demonstrates querying ADT with an http-triggered Azure Function that utilizes ```ManagedIdentityCredential```.
 
 ```
 using System;
